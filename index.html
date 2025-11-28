@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Mini portafolio personal con proyectos, filtro y formulario de contacto.">
+  <title>Mini Portafolio — [Tu Nombre]</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <!-- Skip link para accesibilidad -->
+  <a class="skip" href="#main">Saltar al contenido</a>
+
+  <header class="site-header">
+    <div class="brand">
+      <div class="avatar">TN</div>
+      <div>
+        <h1>Matheiu Restrepo</h1>
+        <p class="tagline">Desarrollador/a web · diseñador/a · soluciones simples</p>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <button id="themeToggle" aria-label="Cambiar tema">Tema</button>
+    </nav>
+  </header>
+
+  <main id="main" class="container">
+    <section class="intro card">
+      <h2>Sobre mí</h2>
+      <p>Soy desarrollador/a con interés en interfaces limpias y accesibles. Este mini-portfolio muestra algunos proyectos y un formulario de contacto simple.</p>
+    </section>
+
+    <section class="projects card">
+      <div class="projects-header">
+        <h2>Proyectos</h2>
+        <div class="filters">
+          <label for="filter">Filtrar:</label>
+          <select id="filter" aria-label="Filtrar proyectos">
+            <option value="all">Todos</option>
+            <option value="web">Web</option>
+            <option value="ux">UX</option>
+            <option value="tool">Herramienta</option>
+          </select>
+        </div>
+      </div>
+
+      <ul id="projectsList" class="project-list" aria-live="polite">
+        <!-- proyectos renderizados por JS -->
+      </ul>
+    </section>
+
+    <section class="contact card" id="contact">
+      <h2>Contacto</h2>
+      <form id="contactForm" novalidate aria-describedby="formMsg">
+        <label for="name">Nombre</label>
+        <input id="name" name="name" type="text" required placeholder="Tu nombre">
+
+        <label for="email">Correo</label>
+        <input id="email" name="email" type="email" required placeholder="tu@correo.com">
+
+        <label for="message">Mensaje</label>
+        <textarea id="message" name="message" rows="4" required placeholder="¿En qué puedo ayudarte?"></textarea>
+
+        <div class="actions">
+          <button type="submit" id="sendBtn">Enviar</button>
+          <button type="button" id="resetBtn">Limpiar</button>
+        </div>
+        <div id="formMsg" class="form-msg" role="status" aria-live="polite"></div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>© <span id="year"></span> [Tu Nombre] — Mini Portafolio · <a href="mailto:tu@correo.com">tu@correo.com</a></small>
+  </footer>
+
+  <script src="./main.js"></script>
+</body>
+</html>
